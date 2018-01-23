@@ -1,0 +1,58 @@
+/* NAME: Ziyu Song
+ * NET ID: zsong10
+ * ASSIGNMENT: Project #2
+ * LAB SESSION: TR 615-730pm
+ * Collaborator: Sifan Ye (sye8), Qiuyue Sun (qsun15)
+ * COURSE: CSC 172
+ * TA: Nathaniel Potrepka
+ */This project is an infix calculator. This Java program will read an input file consisting of several lines of mathematical expressions in infix notation, convert them to postfix notation using the shunting-yard algorithm, and then evaluate the postfix expression. The results will be saved to an output file (“my_eval.txt”). File “postfix_eval_short.txt” should conclude all the expected results of the “infix_expr_short.txt”.
+
+In this project, I also used the stack and queue implementations in Lab 6 and Lab 7.
+
+I created a new file named “infix_test.txt” which concluded all the extra credit mathematical expressions. The results will be saved to an output file “my_eval.txt”.
+
+At the beginning of the project, I created a hash map as an operation precedence map. 0-8 means the precedence of the calculations. Then, I used two boolean methods to transfer integers and doubles to characters and strings.
+
+Then I wrote a method “calculate” as the postfix evaluation. This method also supports exponentiation, modulo, sine, cosine, and tangent operators. Other than that, I used exceptions and displayed messages when there are invalid expressions and expressions that cannot be evaluated.
+
+In the main method, I compiled the program to read the line by line from the input file and then stored everything in to a string array. Then convert everything in tempQueue into infix. The way how I handle invalid expressions and expressions that cannot be evaluated is catch exceptions and display proper messages in console.
+
+All methods in the program are tested.
+
+OUTPUT:
+The correct results for “infix_test.txt”:
+0.00
+-1.00
+-0.00
+0.84
+1255.77
+0.00
+2.00
+ERROR!
+4.00
+8.00
+0.00
+ERROR!
+ERROR!
+10.00
+0.00
+ERROR!
+
+The OUTPUT in the console for “infix_test.txt”:
+Please enter your input file name: 
+infix_test.txt
+Divided by 0 DNE
+Calculation error at: 3 % 0
+0 to the power of 0 DNE
+Calculation error at: 0 ^ 0
+Divided by 0 DNE
+Calculation error at: 4 / 0
+Invalid calculation at: ^&%
+BINGO!
+You can check the results in the file 'my_eval'
+
+The OUTPUT in the console for “infix_expr_short.txt”:
+Please enter your input file name: 
+infix_expr_short.txt
+BINGO!
+You can check the results in the file 'my_eval'
